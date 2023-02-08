@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # associations
   has_many :foods, dependent: :destroy
+  has_many :recipes, dependent: :destroy
 
   # validations
   validates :name, presence: true, uniqueness: true
