@@ -21,8 +21,13 @@
               <td><%= recipe.name %></td>
               <td><%= recipe.description %></td>
               <td class='d-flex justify-content-start gap-2'>
-                <%= link_to 'View', user_recipe_path(recipe.user_id, recipe.id), class: "btn btn-outline-info btn-sm" %>
-                <%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+                <% if can? :read, recipe %>
+                  <%= link_to 'View', user_recipe_path(recipe.user_id, recipe.id), class: "btn btn-outline-info btn-sm" %>
+                <% end %>
+                
+                <% if can? :delete, recipe %>
+                  <%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+                <% end %>
               </td>
             </tr>
           <% end %>
