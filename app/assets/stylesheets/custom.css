@@ -1,0 +1,27 @@
+#sign-in,
+#sign-up,
+#forgot-password,
+#confirm-pass-reset,
+#change-password {
+  max-height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+}
+
+#error_explanation h2 {
+  font-size: 18px;
+}
+
+#error_explanation h2,
+ul li {
+  color: red;
+}
+
+#sign-in form,
+#sign-up form,
+#confirm-pass-reset form,
+#forgot-password form,
+#change-password form {
+  padding: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+}
