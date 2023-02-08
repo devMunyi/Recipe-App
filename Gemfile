@@ -68,6 +68,9 @@ group :development, :test do
 
   # handles loading of environment variables from .env file
   gem 'dotenv-rails'
+
+  # handles email confirmation on dev environment
+  gem 'letter_opener'
 end
 
 group :development do
