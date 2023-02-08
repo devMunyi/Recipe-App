@@ -1,0 +1,33 @@
+<section id='recipes'>
+  <div class='py-5'>
+    <table class="table table-bordered table-hover bs">
+      <thead class='bg-light'>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @recipes.empty? %>
+          <tr>
+            <td rowspan='4'><i>No recipes</i></td>
+          </tr>
+        <% else %>
+          <% @recipes.each_with_index do |recipe, i| %>
+            <tr>
+              <th scope="row"><%= 1 + i %></th>
+              <td><%= recipe.name %></td>
+              <td><%= recipe.description %></td>
+              <td class='d-flex justify-content-start gap-2'>
+                <%= link_to 'View', user_recipe_path(recipe.user_id, recipe.id), class: "btn btn-outline-info btn-sm" %>
+                <%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
