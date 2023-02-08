@@ -25,7 +25,7 @@
                   <%= link_to 'View', user_recipe_path(recipe.user_id, recipe.id), class: "btn btn-outline-info btn-sm" %>
                 <% end %>
                 
-                <% if can? :delete, recipe %>
+                <% if can? :destroy, recipe %>
                   <%= button_to "Remove", user_recipe_path(recipe.user_id, recipe.id), method: :delete, class: "btn btn-outline-danger btn-sm" %>
                 <% end %>
               </td>
