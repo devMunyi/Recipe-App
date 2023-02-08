@@ -1,0 +1,33 @@
+<section class="container">
+<div class=" container">
+ <h1> Add new food </h1>
+ <%= form_with model:@new_food, url: user_foods_path do |form| %>
+    <div class="py-5">
+    <label >Food name/label>
+    <%= form.text_field :name %>
+    </div>
+
+    
+    <div class="py-5">
+    <label class="form-label"> measurement_unit</label>
+    <%= form.text_field :measurement_unit %>
+    </div>
+
+    <div class="py-5">
+    <label class="form-label">Price</label>
+    <%= form.text_field :price %>
+    </div>
+
+    <div class="py-5">
+    <label class="form-label">Quantity</label>
+    <%= form.text_field :quantity %>
+    </div>
+
+
+    <div>
+    <%= form.submit 'Create Food', class: 'btn btn-gradient btn-primary block' %>
+    </div>
+
+    <%end%>
+</div>
+</section>
