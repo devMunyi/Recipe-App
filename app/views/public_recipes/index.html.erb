@@ -1,1 +1,27 @@
-<h1>Public Recipes</h1>
+<section class="container py-3">
+<h1 class="text-center">Public Recipes</h1>
+
+<div class="card-body py-5 ">
+
+<% @recipes.each do|recipe| %>
+
+    <%= link_to user_recipe_path(recipe.user, recipe) do %>
+    <div class="d-flex justify-content-center  gap-8 p-3 my-3"> 
+   
+        <div class="d-flex flex-column gap-8 w-50 bg-light p-3">
+            <h2> <%= recipe.name %></h2>
+    
+            <p>  <h5 class="text-primary"> By <%= recipe.user.name%></h5> </p>
+        </div>
+
+        <div class="d-flex  flex-column gap-8   w-50 bg-secondary bg-gradient p-3">
+            <h2 class="text-white"> Total food item <%= recipe.recipe_foods.count %></h2>
+            <p class="text-white py-3"> Total price : <%= recipe.total_price %></p>
+        </div>
+       
+    </div>
+    <% end %>
+<%end %>
+</div>
+
+</section>
