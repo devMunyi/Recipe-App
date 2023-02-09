@@ -1,8 +1,8 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create destroy]
-  before_action :recipe_obj, only: %i[new create destroy]
+  before_action :recipe_obj, only: %i[new create edit update destroy]
   before_action :user_obj, only: %i[new destroy]
-  before_action :food_list, only: %i[new create]
+  before_action :food_list, only: %i[new create edit update]
 
   def new
     @recipe_food = RecipeFood.new
@@ -18,6 +18,23 @@ class RecipeFoodsController < ApplicationController
     rescue ActiveRecord::RecordInvalid => e
       flash[:alert] = e.message
       redirect_to "/users/#{params[:user_id]}/recipes/#{params[:recipe_id]}/recipe_foods/new"
+    end
+  end
+
+  def edit
+    @edit_recipe_food = RecipeFood.find(params[:id])
+  end
+
+  def update
+    @recipe_food = RecipeFood.find(params[:id])
+
+    begin
+      @recipe_food.update!(recipe_foods_params)
+      flash[:notice] = 'Food updated successfully'
+      redirect_to "/users/#{params[:user_id]}/recipes/#{params[:recipe_id]}"
+    rescue ActiveRecord::RecordInvalid => e
+      flash[:alert] = e.message
+      redirect_to "/users/#{params[:user_id]}/recipes/#{params[:recipe_id]}/recipe_foods/#{params[:id]}/edit"
     end
   end
 

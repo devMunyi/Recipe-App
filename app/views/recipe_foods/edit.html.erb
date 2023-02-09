@@ -1,0 +1,23 @@
+<section class="bs-section">
+  <div class="my-5">
+    <%= form_with model: @edit_recipe_food, method: 'PUT', url: user_recipe_recipe_food_path do |form| %>
+      <h2 class="text-center">Edit recipe food</h2>
+
+      <div class="field mb-3">
+        <%= form.label "Food", class: "form-label" %><br>
+        <%= form.select :food_id, options_for_select(@foods.collect { |f| [f.name, f.id] }, selected: @edit_recipe_food.food_id), {prompt: "Select food", required: true, class: "form-select"} %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :quantity, class: "form-label" %><br>
+        <%= form.number_field :quantity, value: @edit_recipe_food.quantity, min: 0, step: 1, required: true, class: "form-control" %>
+      </div>
+
+      <div class="actions d-grid mb-3">
+        <%= form.submit "Submit", class: "btn btn-outline-primary" %>
+      </div>
+
+      <%= link_to "Go back", user_recipe_path(@recipe.user_id, @recipe.id), class: "text-center" %>
+    <% end %>
+  </div>
+</section>

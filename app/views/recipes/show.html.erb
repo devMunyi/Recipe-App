@@ -71,7 +71,7 @@
               <td><%= '$'+(rf.food.price * rf.quantity).to_s %></td>
               <td class='d-flex gap-2'>
                 <% if can? :update, rf.recipe %>
-                  <button class='btn btn-outline-info btn-sm'>Modify</button>
+                  <%= link_to 'Modify', edit_user_recipe_recipe_food_path(@recipe.user_id, @recipe.id, rf.id), class:'btn btn-outline-info btn-sm' %>
                 <% end %>
 
                 <% if can? :destroy, rf.recipe %>
