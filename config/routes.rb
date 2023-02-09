@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :foods
     resources :recipes, only: [:index, :show, :destroy] do 
       resources :recipe_foods 
-      resources :general_shopping_list
+      resources :shopping_list
     end
   end
 
