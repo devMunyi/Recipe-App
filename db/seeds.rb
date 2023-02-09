@@ -14,9 +14,7 @@ def create_user(name, email)
 end
   
 create_user('Sam Munyi', 'samunyi@gmail.com')
-create_user('John Doe', 'johndoe@gmail.com')
-create_user('Jane Doe', 'janedoe@gmail.com')
-create_user('Tarike Bouari', 'tarikebouari@gmail.com')
+create_user('Tarike Bouari', 'tarikbouari@gmail.com')
 
 # recipes dummy data
 def populate_dummy_recipes(i)
@@ -85,8 +83,8 @@ foods= Food.create([
     {user_id: 2, name: 'Flour', measurement_unit: 'kg', price: 14, quantity: 84},
     {user_id: 1, name: 'Milk', measurement_unit: 'ml', price: 2, quantity: 100},
     {user_id: 2, name: 'Sugar', measurement_unit: 'grams', price: 3, quantity: 50},
-    {user_id: 3, name: 'Egg', measurement_unit: 'pieces', price: 1, quantity: 10},
+    {user_id: 1, name: 'Egg', measurement_unit: 'pieces', price: 1, quantity: 10},
     {user_id: 2, name: 'Bread', measurement_unit: 'pieces', price: 2, quantity: 20},
     {user_id: 1, name: 'Butter', measurement_unit: 'grams', price: 4, quantity: 50},
-    {user_id: 3, name: 'Salt', measurement_unit: 'grams', price: 1, quantity: 100}
+    {user_id: 2, name: 'Salt', measurement_unit: 'grams', price: 1, quantity: 100}
 ])
