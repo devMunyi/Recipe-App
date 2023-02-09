@@ -3,17 +3,19 @@ class Ability
 
   def initialize(user)
     # all users logged-in or not can read public recipes
-    can :read, Recipe, public: true
+    can :read, Recipe, public: true # all users authenticated or not can view public recipes
 
     # additional permissions for logged in users (they can read their own posts)
     return unless user.present?
 
-    can(:read, Recipe, user:)
-    can(:destroy, Recipe, user:)
+    can(:manage, Recipe, user:) # user can perform crud operation his/her own Recipe
+    can(:manage, Food, user:) # user can perform crud operation his/her own Food
+    # can(:read, Recipe, user:)
+    # can(:destroy, Recipe, user:)
 
-    can(:read, Food, user:)
-    can(:destroy, Food, user:)
-    can(:update, Food, user:)
+    # can(:read, Food, user:)
+    # can(:destroy, Food, user:)
+    # can(:update, Food, user:)
 
     # additional permissions for administrators
     # return unless user.admin?

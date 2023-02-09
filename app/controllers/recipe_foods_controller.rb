@@ -1,6 +1,7 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create destroy]
-  before_action :recipe_obj, only: %i[new create]
+  before_action :recipe_obj, only: %i[new create destroy]
+  before_action :user_obj, only: %i[new destroy]
   before_action :food_list, only: %i[new create]
 
   def new
@@ -13,10 +14,10 @@ class RecipeFoodsController < ApplicationController
     begin
       @recipe_food.save!
       flash[:notice] = 'Food added successfully'
-      redirect_to user_recipe_path(params[:user_id], @recipe.id)
+      redirect_to "/users/#{params[:user_id]}/recipes/#{params[:recipe_id]}"
     rescue ActiveRecord::RecordInvalid => e
       flash[:alert] = e.message
-      redirect_to new_user_recipe_recipe_food_url(params[:user_id], @recipe.id)
+      redirect_to "/users/#{params[:user_id]}/recipes/#{params[:recipe_id]}/recipe_foods/new"
     end
   end
 
@@ -28,7 +29,7 @@ class RecipeFoodsController < ApplicationController
     else
       flash.now[:error] = 'There was a problem deleting the recipe food item.'
     end
-    redirect_to user_recipe_path(params[:user_id], params[:id])
+    redirect_to user_recipe_path(user_obj, recipe_obj)
   end
 
   private
@@ -39,6 +40,10 @@ class RecipeFoodsController < ApplicationController
 
   def recipe_obj
     @recipe = Recipe.find(params[:recipe_id])
+  end
+
+  def user_obj
+    @user = User.find(params[:user_id])
   end
 
   def food_list
