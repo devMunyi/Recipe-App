@@ -79,3 +79,7 @@ ul li {
 .select-none {
   user-select: none;
 }
+
+.svg-icon {
+  width: 35px;
+}
