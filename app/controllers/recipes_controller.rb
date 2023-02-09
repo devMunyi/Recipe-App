@@ -4,13 +4,14 @@ class RecipesController < ApplicationController
 
   before_action :recipe_id, only: %i[show destroy]
   before_action :user_id, only: %i[index destroy]
+  before_action :recipe_obj, only: %i[show]
 
   def index
-    @recipes = Recipe.where(user_id: @user_id)
+    @recipes = Recipe.where(user_id: @user_id).order(id: :desc)
   end
 
   def show
-    @recipe = Recipe.find(@recipe_id)
+    @recipe_foods = @recipe.recipe_foods.includes(:recipe, :food)
   end
 
   def destroy
@@ -26,10 +27,14 @@ class RecipesController < ApplicationController
   private
 
   def recipe_id
-    @recipe_id = params['id']
+    @recipe_id = params[:id]
   end
 
   def user_id
-    @user_id = params['user_id']
+    @user_id = params[:user_id]
+  end
+
+  def recipe_obj
+    @recipe = Recipe.find(params[:id])
   end
 end
