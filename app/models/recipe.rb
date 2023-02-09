@@ -4,8 +4,6 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods, dependent: :destroy
   has_many :foods, through: :recipe_foods, dependent: :destroy
 
-
-
   # validations
   validates :name, presence: true, length: { minimum: 2 }
   validates :preparation_time, presence: true, numericality: { greater_than_or_equal_to: 0 }
