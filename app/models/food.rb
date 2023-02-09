@@ -5,4 +5,6 @@ class Food < ApplicationRecord
   # associations
   belongs_to :user, class_name: 'User'
   has_many :recipe_foods, dependent: :destroy
+
+  
 end
