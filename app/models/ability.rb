@@ -11,6 +11,10 @@ class Ability
     can(:read, Recipe, user:)
     can(:destroy, Recipe, user:)
 
+    can(:read, Food, user:)
+    can(:destroy, Food, user:)
+    can(:update, Food, user:)
+
     # additional permissions for administrators
     # return unless user.admin?
     # can :read, Recipe
