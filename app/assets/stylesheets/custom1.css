@@ -83,3 +83,13 @@ ul li {
 .svg-icon {
   width: 35px;
 }
+
+nav .text-white {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+nav .text-white:hover {
+  color: rgb(219, 219, 228) !important;
+}
+

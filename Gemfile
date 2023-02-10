@@ -69,8 +69,8 @@ group :development, :test do
   # handles loading of environment variables from .env file
   gem 'dotenv-rails'
 
-  # handles email confirmation on dev environment
-  gem 'letter_opener'
+  # handle testing
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
@@ -81,7 +81,10 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'spring'
+
+  # handles email confirmation on dev environment
+  gem 'letter_opener'
 end
 
 group :test do
