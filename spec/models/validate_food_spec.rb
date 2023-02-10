@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe Food, type: :model do
   subject do
     Food.new(
-      user_id: 1, 
-      name: 'Potatoe', 
-      measurement_unit: 'grams', 
-      price: 3, 
+      user_id: 1,
+      name: 'Potatoe',
+      measurement_unit: 'grams',
+      price: 3,
       quantity: 15
     )
   end

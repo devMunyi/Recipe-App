@@ -25,5 +25,4 @@ RSpec.describe RecipeFood, type: :model do
     subject.quantity = nil
     expect(subject).not_to be_valid
   end
-
 end

@@ -21,7 +21,7 @@ RSpec.describe Recipe, type: :request do
   # end
 
   context 'GET #index' do
-    before(:example) { get "/users/:user_id/recipes" } # get(:index)
+    before(:example) { get '/users/:user_id/recipes' } # get(:index)
 
     it 'is successful' do
       expect(response).to have_http_status(:ok)
