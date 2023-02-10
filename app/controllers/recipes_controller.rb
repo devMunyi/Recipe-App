@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
   before_action :recipe_obj, only: %i[show]
   before_action :user_obj, only: %i[show]
 
-
   def index
     @recipes = Recipe.where(user_id: @user_id).order(id: :desc)
   end
