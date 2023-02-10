@@ -1,9 +1,9 @@
 class ShoppingListController < ApplicationController
-    # before_action :authenticate_user!, only: %i[index ]
-    # load_and_authorize_resource
-    def index
-        @recipes = Recipe.includes(:recipe_foods).where(user: current_user)
-        @amount_of_food = 0
+  # before_action :authenticate_user!, only: %i[index ]
+  # load_and_authorize_resource
+  def index
+    @recipes = Recipe.includes(:recipe_foods).where(user: current_user)
+    @amount_of_food = 0
     @recipes.each do |recipe|
       @amount_of_food += recipe.recipe_foods.count
     end

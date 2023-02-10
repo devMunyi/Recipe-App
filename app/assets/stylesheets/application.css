@@ -11,3 +11,14 @@ a {
   text-decoration: none !important;
   color: unset !important;
 }
+
+form input[type="text"] {
+  padding: 0.2rem 0.4rem;
+}
+
+.custom-button {
+  padding: 0.2rem 0.5rem;
+  background-color: rgb(67, 166, 219);
+  border-radius: 0.5rem;
+  color: white !important;
+}
