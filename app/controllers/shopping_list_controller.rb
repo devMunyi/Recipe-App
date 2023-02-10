@@ -18,6 +18,6 @@ class ShoppingListController < ApplicationController
     @recipes.each do |recipe|
       @recipe_foods_arr.concat(recipe.recipe_foods)
     end
-    p @recipe_foods_arr
+    @recipe_foods_arr
   end
 end
