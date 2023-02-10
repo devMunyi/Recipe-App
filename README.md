@@ -133,15 +133,16 @@ rubocop
 
 👤 **Samuel Munyi**
 
-- GitHub: [@tarikbouari](https://github.com/devMunyi)
+- GitHub: [@devMunyi](https://github.com/devMunyi)
 - LinkedIn: [Samuel Munyi](https://www.linkedin.com/in/samuel-munyi)
-- Twitter: [@tarikbouari](https://twitter.com/tarikbouari)
+- Twitter: [@munyi_sam](https://twitter.com/munyi_sam)
 
 👤 **Tarik Bouari**
 
-- GitHub: [@devMunyi](https://github.com/tarikbouari)
+- GitHub: [@tarikbouari](https://github.com/tarikbouari)
 - LinkedIn: [tarikbouari](https://linkedin.com/tarikbouari)
-- Twitter: [@munyi_sam](https://twitter.com/munyi_sam)
+- Twitter: [@tarikbouari](https://twitter.com/tarikbouari)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
