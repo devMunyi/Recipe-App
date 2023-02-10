@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.1'
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -69,8 +69,8 @@ group :development, :test do
   # handles loading of environment variables from .env file
   gem 'dotenv-rails'
 
-  # handles email confirmation on dev environment
-  gem 'letter_opener'
+  # handle testing
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
@@ -81,12 +81,16 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'spring'
+
+  # handles email confirmation on dev environment
+  gem 'letter_opener'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
