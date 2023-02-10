@@ -59,8 +59,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[keeps track of all your recipes, ingredients, and inventory]**
 - **[allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe]**
 - **[allow you to make recipes public so anyone can access them]**
