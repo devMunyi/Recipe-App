@@ -39,15 +39,15 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">Bootstrap</a></li>
-    <li><a href="https://reactjs.org/">JavaScript</a></li>
+    <li><a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/">Bootstrap</a></li>
+    <li><a href="https://www.javascript.com/">JavaScript</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Ruby on rails</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on rails</a></li>
   </ul>
 </details>
 
