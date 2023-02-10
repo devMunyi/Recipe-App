@@ -1,0 +1,91 @@
+<section id='recipe-details'>
+  <div class='my-5'>
+    <h1 class='text-center underline'><%= @recipe.name %></h1>
+    <hr>
+    <div class='row'>
+      <div class='col-sm-6'>
+        <table class='table table-bordered table-sm'>
+          <tr>
+            <th scope="row">Preparation time</th>
+            <td scope="col"><%= @recipe.preparation_time.to_s + ' min' %></td>
+          </tr>
+          <tr>
+            <th scope="row">Cooking time</th>
+            <td scope="col"><%= @recipe.cooking_time.to_s + ' min' %></td>
+          </tr>
+        </table>
+      </div>
+      <div class='col-sm-6'>
+        <div class='d-flex justify-content-end'>
+          <div class="form-group mt-3">
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="public" 
+              <% if @recipe.public %>
+              checked="checked" 
+              <% end %>
+              />
+              <label class="form-check-label" for="public">Public</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='my-3 d-flex justify-content-between'>
+        <% if can? :read, @recipe %>
+        <%= link_to user_recipe_shopping_list_index_path(@user, @recipe) do %>
+          <button class='btn btn-outline-info btn-sm'>Generate shopping list</button>
+          <%end%>
+        <% end %>
+
+        <% if can? :read, @recipe %>
+          <%= link_to 'Add ingredient', new_user_recipe_recipe_food_path(@recipe.user_id, @recipe.id), class: 'btn btn-outline-info btn-sm' %>
+        <% end %>
+    </div>
+
+    <hr>
+
+    <table class="table table-hover table-bordered table-sm bs">
+      <thead class='bg-light'>
+        <tr>
+          <th>#</th>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price Per Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @recipe.foods.empty? %>
+          <tr>
+            <th colspan='5'>
+               <i>No food or ingredients added</i>
+            </th>
+          </tr>
+        <% else %>
+          <% @recipe_foods.each_with_index do |rf, i| %>
+            <tr>
+              <th scope="row"><%= i + 1 %></th>
+              <td><%= rf.food.name %></td>
+              <td><%= rf.quantity %></td>
+              <td><%= '$'+ rf.food.price.to_s %></td>
+              <td><%= '$'+(rf.food.price * rf.quantity).to_s %></td>
+              <td class='d-flex gap-2'>
+                <% if can? :update, rf.recipe %>
+                  <%= link_to 'Modify', edit_user_recipe_recipe_food_path(@recipe.user_id, @recipe.id, rf.id), class:'btn btn-outline-info btn-sm' %>
+                <% end %>
+
+                <% if can? :destroy, rf.recipe %>
+                  <%= button_to "Remove", user_recipe_recipe_food_path(@recipe.user_id, @recipe.id, rf.id), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+                <% else %>
+                  <i>N/A</i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

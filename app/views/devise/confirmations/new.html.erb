@@ -1,0 +1,20 @@
+<section id='confirm-pass-reset'>
+  <div class='my-5'>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <h2 class='text-center'>Resend confirmation instructions</h2>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field mb-3">
+        <%= f.label :email, class: 'label' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), required: true, class: 'form-control' %>
+      </div>
+
+      <div class="actions d-grid">
+        <%= f.submit "Resend confirmation instructions", class: 'btn btn-outline-primary' %>
+      </div>
+
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>
+</section>
