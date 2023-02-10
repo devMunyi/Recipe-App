@@ -38,9 +38,9 @@ class RecipesController < ApplicationController
 
   def recipe_obj
     @recipe = Recipe.find(params[:id])
-  end 
+  end
 
   def user_obj
-    @user = User.find(params[:user_id]) 
+    @user = User.find(params[:user_id])
   end
 end
