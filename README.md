@@ -96,7 +96,7 @@ git clone https://github.com/devMunyi/Recipe-App
 
 - Navigate to the location of the folder in your machine:
 
-**`you@your-Pc-name:~$ cd blog-app`**
+**`you@your-Pc-name:~$ cd Recipe-App`**
 
 ### Install
 
