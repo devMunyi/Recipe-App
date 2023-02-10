@@ -33,7 +33,9 @@
 
     <div class='my-3 d-flex justify-content-between'>
         <% if can? :read, @recipe %>
+        <%= link_to user_recipe_shopping_list_path(@user, @recipe) do %>
           <button class='btn btn-outline-info btn-sm'>Generate shopping list</button>
+          <%end%>
         <% end %>
 
         <% if can? :update, @recipe %>
