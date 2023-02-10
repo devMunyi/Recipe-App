@@ -38,7 +38,7 @@
           <%end%>
         <% end %>
 
-        <% if can? :update, @recipe %>
+        <% if can? :read, @recipe %>
           <%= link_to 'Add ingredient', new_user_recipe_recipe_food_path(@recipe.user_id, @recipe.id), class: 'btn btn-outline-info btn-sm' %>
         <% end %>
     </div>
