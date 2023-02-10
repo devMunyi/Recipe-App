@@ -118,10 +118,16 @@ rails s OR rails server
 
 ### Run tests
 
-To run tests, run the following command:
+- To run rubcop tests, run the following command:
 
 ```
 rubocop
+```
+
+- To run rspec tests, run the following command:
+
+```
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
