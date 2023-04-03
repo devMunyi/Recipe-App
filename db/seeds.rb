@@ -15,6 +15,8 @@ end
   
 create_user('Sam Munyi', 'samunyi@gmail.com')
 create_user('Tarike Bouari', 'tarikbouari@gmail.com')
+create_user('John Doe', 'john@gmail.com')
+create_user('Jane Doe', 'jane@gmail.com')
 
 # recipes dummy data
 def populate_dummy_recipes(i)
